@@ -19,6 +19,7 @@ body {
     justify-content: center;
     padding: 30px;
     background-image: url(./images/pattern-curve.svg);
+    background-position: center bottom;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -145,7 +146,42 @@ body {
     background-image: url(./images/icon-prev.svg);
 }
 
-.slide-2{
-    display: none;
+@media only screen and (min-width: 768px) {
+	.slide {
+		flex-direction: row;
+		text-align: left;
+	}
+	.slide-text {
+		background-position: 10% top;
+		background-size: 100px;
+		align-items: flex-start;
+	}
+
+    .slide-img {
+		margin-left: -100px;
+		z-index: -1;
+	}
+
+
+	.slide-img img {
+		width: 400px;
+    }
+
+    .buttons {
+        top: 415px;
+        transform: translate(0);
+        left: calc(100% - 400px);
+    }
 }
 
+@media only screen and (max-width: 400px) {
+	.slide-img img {
+		width: 200px;
+	}
+	.slide-img {
+		padding: 10px;
+	}
+	.buttons {
+		top: 180px;
+	}
+}
